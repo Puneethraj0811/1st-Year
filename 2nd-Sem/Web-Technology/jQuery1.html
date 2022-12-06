@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery</title>
+    <!--<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>-->
+    <script src="jquery-3.6.0.js"></script>
+    <script>
+        function c(a){
+            $(a).css('color','white');
+            $(a).css('background-color','blue');
+        }//jQuery
+    </script>
+</head>
+<body>
+    <p onclick="$(this).hide();">Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus maiores rerum officiis hic deleniti ut vitae voluptate, iure, quod suscipit accusantium aliquid quis, eos expedita ipsa. Officia magni eaque aut.</p>
+    <!--<p onclick="$(this).css('color','red');">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Placeat maiores nulla cumque quibusdam obcaecati aliquid possimus magnam optio, libero ut, nam dicta a eum tempora est impedit rerum sapiente. Dolor.</p>-->
+    <p onclick="c(this);">Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum, quisquam quo corporis ut quos dolorem. Quam voluptas sint error non. Totam eligendi unde doloribus? Quis, voluptatem. Recusandae explicabo asperiores repudiandae?</p>
+
+</body>
+</html>

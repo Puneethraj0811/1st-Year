@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FRUITS</title>
+    <style>
+        label{
+            display: block;
+            margin: 20px;
+        }
+    </style>
+    <script>
+        var tot_amt=0;
+        function add(fruits){
+            if(fruits.checked)
+            tot_amt+=parseInt(fruits.value);
+            else
+            tot_amt-=parseInt(fruits.value);
+            document.getElementById("res").innerHTML="Total is $"+total;
+        }
+        function fun_apple(){
+            var apple_q=document.getElementById("apple_count").value;
+            var apple_amt=apple_q*59;
+            if(document.getElementById("apple_check").checked)
+            tot_amt+=apple_amt;
+            else
+            tot_amt-=apple_amt;
+        }
+        function fun_orange(){
+            var orange_q=document.getElementById("orange_count").value;
+            var orange_amt=orange_q*49;
+            if(document.getElementById("orange_check").checked)
+            tot_amt+=orange_amt;
+            else
+            tot_amt-=orange_amt;
+        }
+        function fun_banana(){
+            var banana_q=document.getElementById("banana_count").value;
+            var banana_amt=banana_q*39;
+            if(document.getElementById("banana_check").checked)
+            tot_amt+=banana_amt;
+            else
+            tot_amt-=banana_amt;
+        }
+        function final_amt(){
+            tot_amt+=tot_amt*0.05;
+            alert("Your total cost is "+tot_amt);
+        }
+        /*function findsum(){
+            var gt=total+(total*(5/100));      // /100*1.05;
+            //alert("Total cost="+gt);
+            const inputval=document.getElementById('qty').value;
+            if(inputval>=1){
+                var cost=inputval*gt;
+                alert("Total cost="+cost);
+            }
+            else {
+                alert("Total cost="+gt);
+            }
+        }*/
+            /*const inputval1=document.getElementById('qty1').value;
+            if(inputval1>=1){
+                var cost=inputval1*gt;
+                alert("Total cost="+cost);
+            }
+            else {
+                alert("Total cost="+gt);
+            }
+            const inputval2=document.getElementById('qty2').value;
+            if(inputval2>=1){
+                var cost=inputval2*gt;
+                alert("Total cost="+cost);
+            }
+            else {
+                alert("Total cost="+gt);
+            }
+            var gt=total+(5/100);
+            if(inputval>=1){
+                var cost=gt*inputval;
+                alert("Total cost="+cost);
+            }
+            else{
+                gt=total+(5/100);
+                alert("Total cost="+gt);
+            }
+        }*/
+    </script>
+</head>
+<body>
+    <form>
+        <label for="apple"><input onclick="add(this); fun_apple();" value="59" type="checkbox" name="apple" id="apple">Apple(59 cents each)</label>
+        <label for="quantity">Enter Quantity  <input type="number" id="qty" placeholder="Enter quantity here..."></label>
+        <label for="apple"><input onclick="add(this); fun_orange();" value="49" type="checkbox" name="orange" id="orange">Orange(49 cents each)</label>
+        <label for="quantity">Enter Quantity  <input type="number" id="qty" placeholder="Enter quantity here..."></label>
+        <label for="apple"><input onclick="add(this); fun_banana();" value="39" type="checkbox" name="banana" id="banana">Banana(39 cents each)</label>
+        <label for="quantity">Enter Quantity  <input type="number" id="qty" placeholder="Enter quantity here..."></label>
+        <div id="res">$0</div>
+        <input type="submit" value="submit" onclick="return final_amt()">
+    </form>
+</body>
+</html>

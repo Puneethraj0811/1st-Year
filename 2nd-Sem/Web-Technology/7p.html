@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!--<script>
+       function inc()
+       {
+          var pb=document.getElementById('stdp');
+           var count=0,i;
+           var text=document.getElementByName('std');
+           for(i=0;i<text.length;i++)
+           {
+                if(text[i].validity.valid)
+                {
+                    count++;
+                }
+            }
+            pb.value=count*(100/text.length);
+         }   
+    </script>-->
+    <script>
+        function inc()
+        {
+            var pb=document.getElementById('stdp');
+            var count=0,i;
+            var text=document.getElementsByName('std');
+            for(i=0;i<text.length;i++)
+            {
+                if(text[i].validity.valid)
+                {
+                    count++;
+                }
+            }
+            pb.value=count*(100/text.length);
+        }
+    </script>
+    <!--<script>
+        function nm(){
+            if(document.getElementsByName("name").checked){
+                document.getElementById("stdp").value+=20;
+            }
+            else{
+                document.getElementById("stdp").value;
+            }
+        }
+        function inc(){
+            if(document.getElementsByName("std").checked){
+                document.getElementById("stdp").value+=20;        
+            }
+            else{
+                document.getElementById("stdp").value;
+            }
+        }
+    </script>-->
+</head>
+<body>
+    <form>
+        <label><b>Name of the Student:</b></label>
+        <input type="text" placeholder="Enter name" name="std" required onchange="inc();"><br><br>
+        <label><b>Select your Class:</b></label><br>
+
+        <!--<input type="radio" value="MCA">
+        <label for="MCA">MCA</label><br>
+        <input type="radio" value="MBA">
+        <label for="MBA">MBA</label><br>
+        <input type="radio" value="Civil Engineering">
+        <label for="Civil Engineering">Civil Engineering</label><br>
+        <input type="radio" value="CS Engineering">
+        <label for="CS Engineering">CS Engineering</label><br>
+        <input type="radio" value="ENC Engineering">
+        <label for="ENC Engineering">ENC Engineering</label><br>-->
+
+        <select name="class" name="std" onchange="inc();" >  
+            <option value="MCA">MCA</option>
+            <option value="MBA">MBA</option>
+            <option value="Civil Engineering">Civil Engineering</option>
+            <option value="CS Engineering">CS Engineering</option>
+            <option value="ENC Engineering">ENC Engineering</option>
+
+        </select><br><br>
+        <label><b>Phone number</b></label>
+        <input type="number" pattern="[0-9]" name="std" required onchange="inc();"><br><br>
+
+        <label><b>E-Mail</b></label>
+        <input type="email" name="std" required onchange="inc();"><br><br>
+
+        <label><b>Select Gender</b></label><br>
+        <input type="radio" name="male" name="std" required onchange="inc();">
+        <label>Male</label><br>
+        <input type="radio" name="male" name="std" required onchange="inc();">
+        <label>Female</label><br><br>
+
+        <label><b>Address</b></label>
+        <textarea name="add" row="10" cols="50" name="std" required onchange="inc();"></textarea><br><br>
+
+        <label><b>Date of Birth</b></label>
+        <input type="date" required name="std" onchange="inc();"><br><br>
+
+        <input type="submit" value="Submit">
+        <input type="reset" value="Clear">
+    </form>
+    <progress value="0" max="100" id="stdp"></progress>
+</body>
+</html>

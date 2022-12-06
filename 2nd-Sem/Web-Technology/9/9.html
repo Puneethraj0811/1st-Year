@@ -1,0 +1,62 @@
+/*9.Develop a simple calculator to perform arithmetic (addition, subtraction, multiplication and 
+division) operations on given two numbers. Use an HTML tag that allows the user to input two 
+numbers and to display the result of arithmetic operation. Write suitable HTML and JavaScript 
+and CSS to your simple calculator.*/
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Calculator</title>
+    <style>
+        label{
+            display: block;
+            margin: 10px;
+        }
+        .n{
+            background-color: yellow;
+            border:2px solid green;
+            border-radius: 4%;
+        }
+        h2{
+            text-transform: uppercase;
+        }
+    </style>
+    <script>
+        function add(){
+            document.getElementById("res").value=(parseInt(document.getElementById("fn").value)+parseInt(document.getElementById("sn").value));
+        }
+        function sub(){
+            document.getElementById("res").value=(parseInt(document.getElementById("fn").value)-parseInt(document.getElementById("sn").value));
+        }
+        function mul(){
+            document.getElementById("res").value=(parseInt(document.getElementById("fn").value)*parseInt(document.getElementById("sn").value));
+        }
+        function div(){
+            if((document.getElementById("sn").value)!=0){
+                document.getElementById("res").value=(parseInt(document.getElementById("fn").value)/parseInt(document.getElementById("sn").value));
+            }
+            else{
+                document.getElementById("d").innerHTML="Enter the value greater than zero";
+                //document.getElementById("res").value="Enter the value greater than zero"
+            }
+        }
+    </script>
+</head>
+<body>
+    <form action="">
+        <h2>simple Calculator</h2>
+        <label for="n">Number 1:&emsp;<input type="number" required id="fn" class="n"></label>
+        <label for="n">Number 2:&emsp;<input type="number" required id="sn" class="n"></label>
+        <label for="n">Result:&emsp;&emsp;&ensp;<input type="text" disabled id="res" class="n"></label>
+        <input type="button" value="ADD" onclick="add();">&ensp;
+        <input type="button" value="SUB" onclick="sub();">&ensp;
+        <input type="button" value="MUL" onclick="mul();">&ensp;
+        <input type="button" value="DIV" onclick="div();">&ensp;
+        <input type="reset" value="Clear">
+        <div id="d"></div>
+    </form>
+</body>
+</html>

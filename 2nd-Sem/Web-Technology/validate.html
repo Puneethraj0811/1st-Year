@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function usn(){
+            var str=document.getElementById("u").value;
+           
+            if(str.match(/[1-4][A-Z]{2}[0-9]{2}[A-Z]{3}[0-9]{2}/)===null){
+            //alert("Enter valid USN");
+            //document.write("Enter valid USN");
+            //b1=document.getElementById("b").cliked;
+            //innerhtml("not valid");
+            //innerhtml="notvalid";
+            document.getElementById("d").innerHTML="not valid";
+            
+
+            
+
+            }
+            else{
+            //alert("USN valid");
+            //document.write("USN valid")
+            document.getElementById("d").innerHTML="USN valid";
+        }
+    }
+        function sem(){
+            var str=document.getElementById("s").value;
+            if(str.match(/[1-6]/)===null)
+            //alert("Sem should be between 1 to 6");
+            document.getElementById("d1").innerHTML="not valid";
+            else
+            //alert("valid SEM");
+            document.getElementById("d1").innerHTML="sem valid";
+        }
+    </script>
+    <style>
+        #s{
+            border-style: double;
+            border-color: blue;
+            width: 30%;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="s">
+
+        USN:<input type="text" id="u">
+        <button onclick="usn()" >VALIDATE</button>
+        <br>
+        SEMESTER:<input type="text" id="s" onchange="sem()">
+        <button onclick="sem()">VALIDATE</button>
+        
+
+    </div>
+    <div id="d"></div>
+    <div id="d1"></div>
+    <br>
+    
+</body>
+</html>

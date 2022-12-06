@@ -1,0 +1,43 @@
+/*10.Develop and demonstrate using jQuery to solve the following: 
+a) Limit character input in the text area including count. 
+b) Based on check box, disable/enable the form submit button.*/
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>10th lab program</title>
+    <script src="jquery-3.6.0.min.js"></script>
+    <script>
+        $(function(){
+            var maxl=$("#ta").attr('maxlength');
+            //$('#s1").text($("#ta").attr('maxlength'));
+            $("span").text(maxl);
+            $("#ta").keyup(function(){
+                var l = maxl -  $(this).val().length;
+                $("#s").text(l);
+                //$("span").text('80');
+            });
+            $("#agree").click(function(){
+                if($(this).is(':checked'))
+                    $("#subbtn").removeAttr('disabled'); 
+                else    
+                    $("#subbtn").attr('disabled','disabled');
+            });
+        });
+    </script>
+</head>
+<body>
+    <center>
+        <form action="">
+            <h3><b>Maximum of <span>20</span> characters</b></h3><br>
+            <textarea id="ta" maxlength="5" rows="5" cols="30"></textarea><br>   
+            <h4><span id="s">20</span> character(s) are remaining.</h4>
+            <label for="agree"><input type="checkbox" name="agree" id="agree">I agree the rules and regulations</label>
+            <input type="button" value="Submit" disabled id="subbtn">
+        </form>
+    </center>
+</body>
+</html>
